@@ -3,10 +3,10 @@ from ultralytics import YOLO
 model = YOLO("weights.pt")
 
 images = [
-    "IMG-20211029-WA0021.jpg",
-    "61931fff217c5cc6.jpg",
-    "IMG_20220219_181958.jpg",
-    "coffee250.jpg"
+    "images/coffee_detection.jpg",
+    "images/cheese_detection.jpg",
+    "images/fruit_detection.jpg",
+    "images/crowded_shelf_detection.jpg"
 ]
 
 for image in images:
