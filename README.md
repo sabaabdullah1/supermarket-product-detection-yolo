@@ -79,38 +79,66 @@ Final Output Image
 
 ---
 
-## Results & Evaluation
+### YOLO26s Test Set Performance
 
-The model was evaluated using object detection metrics.
+The following graph summarizes the main evaluation metrics of YOLO26s.
 
-At a confidence threshold of 10%, the model achieved:
+![YOLO26s Metrics](images/yolo26s_metrics.png)
 
-- Precision: 36.5%
-- Recall: 47.3%
-- F1 Score: 37.7%
-- mAP@50: 50.8%
-- mAP@50:95: 34.3%
-- mAP@75: 41.1%
+### Performance by Object Size
 
-Additional object-size evaluation results:
+The following graph compares the model performance on small, medium, and large objects.
+
+![Object Size Performance](images/object_size_performance.png)
+
+### YOLO26s Test Set Performance
+
+The following graph summarizes the main evaluation metrics of YOLO26s.
+
+![YOLO26s Metrics](images/yolo26s_metrics.png)
+
+### Performance by Object Size
+
+The model was also evaluated based on the size of detected objects:
 
 - Small objects mAP@50: 49.4%
 - Medium objects mAP@50: 64.5%
 - Large objects mAP@50: 43.5%
 
-The confusion matrix and performance-by-class analysis show that the model performs better on some product classes than others.
+Medium-sized objects achieved the highest mAP@50.
+
+![Object Size Performance](images/object_size_performance.png)
 
 ---
 
-### Model Performance Comparison
+## Model Comparison
 
-The following graph compares YOLO26s and YOLO26 Nano on the test set.
+Two YOLO26 model variants were compared on the same test set: YOLO26s and YOLO26 Nano.
+
+| Metric | YOLO26s | YOLO26 Nano |
+|---|---:|---:|
+| mAP@50 | 50.8% | 38.3% |
+| Precision | 36.5% | 31.6% |
+| Recall | 47.3% | 35.1% |
+| F1 Score | 37.7% | 28.4% |
+
+YOLO26s achieved higher test-set results across all four evaluation metrics.
 
 ![YOLO Model Comparison](images/model_comparison.png)
 
+Based on these test-set results, YOLO26s was used as the final model for the supermarket product detection system.
+
+---
+
 ## Sample Prediction Results
 
-The model was tested on four supermarket images.
+The final model was tested on four supermarket images.
+
+### Detection Count Comparison
+
+The following graph shows the total number of detections in the four sample test images.
+
+![Sample Detection Counts](images/sample_detection_counts.png)
 
 ### Coffee Shelf
 
@@ -123,20 +151,20 @@ The model was tested on four supermarket images.
 - Detected 21 Cheese objects
 - Detected 3 Meat objects
 - Detected 1 Yogurt object
-- Highest confidence reached 0.95
+- Highest Cheese confidence reached 0.95
 
 ### Fruit Image
 
 - Detected 2 Apples
 - Also predicted Avocado, Nectarine, and Plum
-- Confidence scores were generally lower, ranging approximately from 0.26 to 0.62
+- Confidence scores ranged approximately from 0.26 to 0.62
 - This image demonstrates class confusion between visually similar fruits
 
 ### Crowded Shelf
 
 - Detected 59 Beans objects
 - Confidence scores ranged approximately from 0.26 to 0.87
-- The image demonstrates possible over-classification in crowded scenes
+- This image demonstrates possible over-classification in crowded scenes
 
 ---
 
@@ -148,7 +176,7 @@ The model detected 33 Coffee products with confidence scores reaching up to 0.86
 
 The cheese shelf image also produced strong detections, with Cheese predictions reaching a confidence score of 0.95.
 
-These results show that the model performs well when product appearance is clear and consistent.
+These results show stronger detection performance when product appearance is clear and consistent.
 
 ---
 
@@ -156,17 +184,15 @@ These results show that the model performs well when product appearance is clear
 
 The fruit image demonstrates a failure case.
 
-The model detected some apples correctly, but also classified similar-looking fruits as:
+The model detected some apples correctly but also classified visually similar fruits as:
 
 - Avocado
 - Nectarine
 - Plum
 
-The confidence scores in this image were generally lower, approximately between 0.26 and 0.62.
-
 Another failure occurred in a crowded supermarket shelf image where many objects were classified as Beans.
 
-These errors may occur because of:
+Possible reasons for these errors include:
 
 - Similar colors and shapes between products
 - Crowded shelves
@@ -180,13 +206,13 @@ These errors may occur because of:
 
 ## Deployment / Optimization
 
-The YOLO model was exported from PyTorch format to ONNX format.
+The final YOLO26s model was exported from PyTorch format to ONNX format.
 
-The exported file is:
+The exported model is:
 
 `weights.onnx`
 
-ONNX can be used to deploy the model on different platforms and environments.
+ONNX makes the model easier to deploy across different platforms and environments.
 
 Possible real-world applications include:
 
@@ -202,7 +228,7 @@ Possible real-world applications include:
 ## Technologies Used
 
 - Python
-- YOLO
+- YOLO26
 - Ultralytics
 - PyTorch
 - OpenCV
@@ -220,6 +246,20 @@ Install the required packages:
 ```bash
 pip install -r requirements.txt
 ```
+
+Run supermarket product detection:
+
+```bash
+python3 train.py
+```
+
+Export the model to ONNX:
+
+```bash
+python3 export.py
+```
+
+---
 
 ## SDAIA Academy Link
 
