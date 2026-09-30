@@ -236,6 +236,6 @@ Install the required packages:
 ```bash
 pip install -r requirements.txt
 
-## SDAIA Academy GitHub Repository Link
+## SDAIA Academy Link
 
 https://github.com/SDAIAAcademy
