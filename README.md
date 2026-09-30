@@ -102,6 +102,28 @@ The confusion matrix and performance-by-class analysis show that the model perfo
 
 ---
 
+## Model Comparison
+
+Two YOLO26 model variants were compared on the test set: YOLO26s and YOLO26 Nano.
+
+| Metric | YOLO26s | YOLO26 Nano |
+|---|---:|---:|
+| mAP@50 | 50.8% | 38.3% |
+| Precision | 36.5% | 31.6% |
+| Recall | 47.3% | 35.1% |
+| F1 Score | 37.7% | 28.4% |
+
+YOLO26s achieved higher performance across all major evaluation metrics.
+
+Compared with YOLO26 Nano, YOLO26s improved:
+
+- mAP@50 by 12.5 percentage points
+- Precision by 4.9 percentage points
+- Recall by 12.2 percentage points
+- F1 Score by 9.3 percentage points
+
+Based on the test-set results, YOLO26s was selected for the final supermarket product detection system because it provided stronger detection performance.
+
 ## Sample Prediction Results
 
 The model was tested on four supermarket images.
