@@ -29,7 +29,7 @@ The system can:
 
 ## Dataset & Model Used
 
-The project uses supermarket product images from public datasets such as Roboflow and Kaggle.
+The project uses supermarket product images from a Roboflow dataset.
 
 The dataset contains approximately 10,000 supermarket product images.
 
@@ -245,7 +245,6 @@ Possible real-world applications include:
 - PyTorch
 - OpenCV
 - Roboflow
-- Kaggle
 - VS Code
 - ONNX
 
