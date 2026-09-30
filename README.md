@@ -140,7 +140,13 @@ The following graph shows the total number of detections in the four sample test
 
 ![Sample Detection Counts](images/sample_detection_counts.png)
 
+## Sample Prediction Results
+
+The model was tested on four supermarket images. The following examples show the detection results produced by the model.
+
 ### Coffee Shelf
+
+![Coffee Detection Result](images/coffee_detection.jpg)
 
 - Detected 33 Coffee products
 - Confidence scores ranged approximately from 0.40 to 0.86
@@ -148,23 +154,29 @@ The following graph shows the total number of detections in the four sample test
 
 ### Cheese Shelf
 
+![Cheese Detection Result](images/cheese_detection.jpg)
+
 - Detected 21 Cheese objects
 - Detected 3 Meat objects
 - Detected 1 Yogurt object
-- Highest Cheese confidence reached 0.95
+- Highest confidence reached 0.95
 
 ### Fruit Image
+
+![Fruit Detection Result](images/fruit_detection.jpg)
 
 - Detected 2 Apples
 - Also predicted Avocado, Nectarine, and Plum
 - Confidence scores ranged approximately from 0.26 to 0.62
-- This image demonstrates class confusion between visually similar fruits
+- This example shows confusion between visually similar fruit classes
 
 ### Crowded Shelf
 
+![Crowded Shelf Detection Result](images/crowded_shelf_detection.jpg)
+
 - Detected 59 Beans objects
 - Confidence scores ranged approximately from 0.26 to 0.87
-- This image demonstrates possible over-classification in crowded scenes
+- This example shows possible over-detection in a crowded shelf environment
 
 ---
 
