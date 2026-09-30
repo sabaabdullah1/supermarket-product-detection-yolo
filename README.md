@@ -63,9 +63,10 @@ The model supports more than 100 supermarket-related product classes, including:
 
 ## Workflow / Architecture
 
-The following diagram illustrates the complete workflow of the supermarket product detection system, from dataset preparation to model inference and deployment.
+The following diagram illustrates the complete workflow of the supermarket product detection system using YOLO26s, from dataset preparation to model evaluation, inference, and ONNX deployment.
 
 ![Workflow Architecture](images/workflow_architecture.png)
+
 
 ---
 
